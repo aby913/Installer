@@ -35,7 +35,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
 
       - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@v3.1.0
+        uses: softprops/action-gh-release@v1
         with:
           distribution: goreleaser
           version: v1.18.2
