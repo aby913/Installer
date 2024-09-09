@@ -6,6 +6,8 @@ builds:
       - GOOS=linux
       - GOARCH=amd64
     binary: terminus-cli
+    snapshot:
+      name_template: "{{ .ProjectName }}-v{{ .Version }}_{{ .Os }}_{{ .Arch }}"
     main: ./cmd/main.go
     goos:
       - linux
@@ -25,6 +27,8 @@ builds:
       - GOOS=darwin
       - GOARCH=amd64
     binary: terminus-cli
+    snapshot:
+      name_template: "{{ .ProjectName }}-v{{ .Version }}_{{ .Os }}_{{ .Arch }}"
     main: ./cmd/main.go
     goos:
       - darwin
@@ -51,8 +55,6 @@ archives:
       - none*
 checksum:
   name_template: "checksums.txt"
-snapshot:
-  name_template: "{{ .Version }}-next-{{.ShortCommit}}"
 changelog:
   skip: true
   sort: asc
