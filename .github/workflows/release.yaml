@@ -5,6 +5,7 @@ on:
     inputs:
       tags:
         description: "Tags"
+
 jobs:
   goreleaser:
     runs-on: ubuntu-latest
