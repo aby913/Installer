@@ -17,6 +17,12 @@ jobs:
       - name: Unshallow
         run: git fetch --prune --unshallow
 
+      - name: Get latest tag
+        uses: "WyriHaximus/github-action-get-previous-tag@v1"
+        id: get-latest-tag
+        with:
+          fallback: latest
+
       - name: Set up Go
         uses: actions/setup-go@v3
         with:
@@ -33,4 +39,3 @@ jobs:
           args: release --snapshot --clean
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GORELEASER_CURRENT_TAG: ${{ github.event.inputs.tag }}
