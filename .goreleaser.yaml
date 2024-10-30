@@ -28,7 +28,6 @@ archives:
   - id: terminus-cli
     name_template: "{{ .ProjectName }}-v{{ .Version }}_{{ .Os }}_{{ .Arch }}"
     replacements:
-      windows: windows
       linux: linux
       amd64: amd64
       arm: arm64
