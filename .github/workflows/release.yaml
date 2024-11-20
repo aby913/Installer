@@ -87,3 +87,11 @@ jobs:
       - name: Show
         run: |
           gci
+
+      - name: Verify signtool
+        run: |
+          where signtool
+
+      - name: DDD
+        run: |
+          Get-ChildItem -Path .\ -Recurse -File
