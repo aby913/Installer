@@ -87,6 +87,7 @@ jobs:
       - name: Show
         run: |
           gci
+        continue-on-error: true
 
       - name: Install Chocolatey
         run: |
@@ -96,9 +97,15 @@ jobs:
         run: |
           choco install windows-sdk-10-version-1903-all -y
 
-      - name: Verify signtool
+      - name: Verify signtool1
+        run: |
+          where signtool
+        continue-on-error: true
+
+      - name: Verify signtool2
         run: |
           Get-Command signtool
+        continue-on-error: true
 
       - name: DDD
         run: |
