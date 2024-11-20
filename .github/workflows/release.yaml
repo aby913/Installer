@@ -88,10 +88,6 @@ jobs:
         run: |
           gci
 
-      - name: Verify signtool1
-        run: |
-          Get-Command signtool
-
       - name: Install Chocolatey
         run: |
           Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
@@ -100,7 +96,7 @@ jobs:
         run: |
           choco install windows-sdk-10-version-1903-all -y
 
-      - name: Verify signtool2
+      - name: Verify signtool
         run: |
           Get-Command signtool
 
