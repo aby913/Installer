@@ -34,17 +34,17 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Update
-        run: |
-          sudo apt update && sudo apt install tree -y
+      # - name: Update
+      #   run: |
+      #     sudo apt update && sudo apt install tree -y
 
-      - name: Show
-        run: |
-          pwd && ls
+      # - name: Show
+      #   run: |
+      #     pwd && ls
 
-      - name: Show1
-        run: |
-          tree ./output/
+      # - name: Show1
+      #   run: |
+      #     tree ./output/
 
       # - name: Upload to S3
       #   env:
