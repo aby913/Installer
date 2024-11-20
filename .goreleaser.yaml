@@ -1,3 +1,4 @@
+version: 2
 project_name: olares-cli
 builds:
   - env:
@@ -23,12 +24,7 @@ dist: ./output
 archives:
   - id: olares-cli
     name_template: "{{ .ProjectName }}-v{{ .Version }}_{{ .Os }}_{{ .Arch }}"
-    replacements:
-      amd64: amd64
-      arm: arm64
 checksum:
   name_template: "checksums.txt"
-changelog:
-  skip: true
 release:
-  disable: true
+  name_template: "{{.ProjectName}}-v{{.Version}}"
