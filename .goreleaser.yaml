@@ -34,6 +34,6 @@ archives:
       amd64: amd64
       # arm: arm64
 checksum:
-  name_template: "checksums_{{ .Version }}.txt"
+  name_template: "{{ .ProjectName }}_checksums_{{ .Version }}.txt"
 changelog:
   skip: true
