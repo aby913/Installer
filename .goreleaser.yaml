@@ -5,15 +5,15 @@ builds:
     binary: olares-cli
     main: ./cmd/main.go
     goos:
-      # - linux
-      # - darwin
+      - linux
+      - darwin
       - windows
     goarch:
       - amd64
-      # - arm
-      # - arm64
-    # goarm:
-    #   - 7
+      - arm
+      - arm64
+    goarm:
+      - 7
     ignore:
       - goos: linux
         goarch: arm64
@@ -30,9 +30,9 @@ archives:
   - id: olares-cli
     name_template: "{{ .ProjectName }}-v{{ .Version }}_{{ .Os }}_{{ .Arch }}"
     replacements:
-      # linux: linux
+      linux: linux
       amd64: amd64
-      # arm: arm64
+      arm: arm64
 checksum:
   name_template: "{{ .ProjectName }}_checksums_{{ .Version }}.txt"
 changelog:
