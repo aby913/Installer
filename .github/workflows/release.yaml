@@ -72,6 +72,7 @@ jobs:
           cd output && for ext in tar.gz txt; do
             for file in ./*.$ext; do
               if [ -f "$file" ]; then
+                echo "---1--- $file"
                 aws s3 cp "$file" s3://zhangliang-s3-test/test2/$file
                 # coscmd upload $file /$file
               fi
