@@ -35,6 +35,5 @@ archives:
       arm: arm64
 checksum:
   name_template: "{{ .ProjectName }}_{{ .Version }}_checksums.txt"
-  split: true
 changelog:
   skip: true
